@@ -5,9 +5,9 @@ from datetime import timedelta
 import asyncio
 
 try:
-	open("lapak/gatcha.db")
+	open("gatcha.db")
 except:
-	x = sqlite3.connect("lapak/gatcha.db")
+	x = sqlite3.connect("gatcha.db")
 	sc = f"""
 CREATE TABLE limiting (
 		uid INTEGER,
@@ -18,7 +18,7 @@ CREATE TABLE limiting (
 	x.commit()
 
 def get_db():
-	x = sqlite3.connect("lapak/gatcha.db")
+	x = sqlite3.connect("gatcha.db")
 	x.row_factory = sqlite3.Row
 	return x
 
